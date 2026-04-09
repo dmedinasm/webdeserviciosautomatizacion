@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizaciones | Soluciones Inteligentes para Empresas</title>
+    <meta name="description" content="Partner tecnológico para empresas que buscan escalar con inteligencia artificial. Automatización de procesos, integración de sistemas y soluciones a medida.">
+    <meta name="keywords" content="automatización empresarial, inteligencia artificial, optimización de procesos, integración de sistemas, consultoría tecnológica">
+    <meta name="author" content="Automatizaciones">
+    <meta property="og:title" content="Automatizaciones | Soluciones Inteligentes para Empresas">
+    <meta property="og:description" content="Escale su negocio con soluciones tecnológicas inteligentes. Diagnóstico, estrategia e implementación a medida.">
+    <meta property="og:type" content="website">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deep: {
+                            900: '#0a1628',
+                            800: '#0f2140',
+                            700: '#152c55',
+                            600: '#1a3a6e',
+                        },
+                        accent: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        violet: {
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; }
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .fade-left.visible { opacity: 1; transform: translateX(0); }
+        .fade-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .fade-right.visible { opacity: 1; transform: translateX(0); }
+        .scale-in { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .scale-in.visible { opacity: 1; transform: scale(1); }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .gradient-text {
+            background: linear-gradient(135deg, #34d399, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-gradient {
+            background: radial-gradient(ellipse at 30% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 100%, rgba(52, 211, 153, 0.1) 0%, transparent 50%),
+                        #0a1628;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 40px rgba(52, 211, 153, 0.1), 0 0 80px rgba(139, 92, 246, 0.05);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981, #7c3aed);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #059669, #6d28d9);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation { animation: float 6s ease-in-out infinite; }
+        .grid-pattern {
+            background-image: radial-gradient(rgba(52, 211, 153, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+    </style>
+</head>
+<body class="bg-deep-900 text-white antialiased">
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="#hero" class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-500 to-violet-500 flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">DM</span>
+                    </div>
+                    <span class="font-semibold text-lg hidden sm:block">Automatizaciones</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#servicios" class="text-sm text-gray-300 hover:text-accent-400 transition-colors">Servicios</a>
+                    <a href="#sobre-mi" class="text-sm text-gray-300 hover:text-accent-400 transition-colors">Sobre Mí</a>
+                    <a href="#beneficios" class="text-sm text-gray-300 hover:text-accent-400 transition-colors">Beneficios</a>
+                    <a href="#contacto" class="text-sm px-5 py-2 rounded-full border border-accent-500 text-accent-400 hover:bg-accent-500 hover:text-white transition-all">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-deep-900/95 nav-blur border-t border-white/5">
+            <div class="px-4 py-4 space-y-3">
+                <a href="#servicios" class="block text-sm text-gray-300 hover:text-accent-400 transition-colors py-2">Servicios</a>
+                <a href="#sobre-mi" class="block text-sm text-gray-300 hover:text-accent-400 transition-colors py-2">Sobre Mí</a>
+                <a href="#beneficios" class="block text-sm text-gray-300 hover:text-accent-400 transition-colors py-2">Beneficios</a>
+                <a href="#contacto" class="block text-sm text-accent-400 font-medium py-2">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="hero" class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 grid-pattern opacity-30"></div>
+        <div class="absolute top-1/4 right-10 w-72 h-72 bg-violet-500/10 rounded-full blur-3xl float-animation"></div>
+        <div class="absolute bottom-1/4 left-10 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl float-animation" style="animation-delay: 3s;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 relative z-10">
+            <div class="max-w-4xl">
+                <div class="fade-up flex items-center gap-2 mb-6">
+                    <span class="pulse-dot w-2 h-2 bg-accent-400 rounded-full"></span>
+                    <span class="text-sm text-accent-400 font-medium tracking-wide uppercase">Disponible para nuevos proyectos</span>
+                </div>
+                <h1 class="fade-up delay-100 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                    Escale su negocio al
+                    <span class="gradient-text"> siguiente nivel</span>
+                    con Inteligencia Artificial.
+                </h1>
+                <p class="fade-up delay-200 text-lg md:text-xl text-gray-400 max-w-2xl mb-10 leading-relaxed">
+                    Ayudo a empresas a integrar soluciones tecnológicas y automatizaciones inteligentes para optimizar procesos, reducir costos y permitir que su equipo se enfoque en lo que realmente importa: <strong class="text-white">Crecer.</strong>
+                </p>
+                <div class="fade-up delay-300 flex flex-col sm:flex-row gap-4">
+                    <a href="#contacto" class="btn-primary inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-semibold text-base">
+                        Solicitar Diagnóstico Inicial
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                    <a href="#servicios" class="inline-flex items-center justify-center px-8 py-4 rounded-full text-gray-300 font-medium text-base border border-white/10 hover:border-white/20 hover:bg-white/5 transition-all">
+                        Conocer más
+                    </a>
+                </div>
+                <div class="fade-up delay-400 mt-16 grid grid-cols-3 gap-8 max-w-md">
+                    <div>
+                        <div class="text-2xl md:text-3xl font-bold gradient-text">+10</div>
+                        <div class="text-xs md:text-sm text-gray-500 mt-1">Años en el sector tecnológico</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl md:text-3xl font-bold gradient-text">100%</div>
+                        <div class="text-xs md:text-sm text-gray-500 mt-1">Soluciones a medida</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl md:text-3xl font-bold gradient-text">24/7</div>
+                        <div class="text-xs md:text-sm text-gray-500 mt-1">Soporte continuo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SERVICES SECTION ========== -->
+    <section id="servicios" class="py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-deep-900 via-deep-800 to-deep-900"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 md:mb-20">
+                <span class="fade-up inline-block text-sm text-accent-400 font-medium tracking-wide uppercase mb-4">Mis Servicios</span>
+                <h2 class="fade-up delay-100 text-3xl md:text-5xl font-bold mb-6">
+                    De la estrategia a la <span class="gradient-text">implementación</span>
+                </h2>
+                <p class="fade-up delay-200 text-gray-400 max-w-2xl mx-auto text-lg">
+                    Un proceso claro y estructurado para transformar su operación sin complicaciones.
+                </p>
+            </div>
+
+            <!-- Phase 1: Diagnóstico -->
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 mb-16 md:mb-24">
+                <div class="fade-left">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm text-accent-400 font-medium">Fase 1</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Diagnóstico y Estrategia</h3>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Antes de implementar, entendemos su visión. Analizamos cómo trabaja hoy para diseñar el mañana.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-accent-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-white font-medium">Auditoría de procesos actuales</span>
+                                <p class="text-gray-500 text-sm mt-1">Identificamos cuellos de botella y tareas repetitivas que consumen recursos valiosos.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-accent-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-white font-medium">Análisis de oportunidades de mejora</span>
+                                <p class="text-gray-500 text-sm mt-1">Detectamos dónde la tecnología puede generar el mayor impacto en su operación.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-accent-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-white font-medium">Hoja de ruta personalizada</span>
+                                <p class="text-gray-500 text-sm mt-1">Un plan claro, con plazos y objetivos medibles adaptados a su negocio.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fade-right flex items-center">
+                    <div class="w-full bg-deep-700/50 rounded-2xl border border-white/5 p-8 card-glow transition-all duration-500">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                                <div class="w-8 h-8 rounded bg-accent-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="h-2 bg-white/10 rounded w-3/4"></div>
+                                    <div class="h-2 bg-white/5 rounded w-1/2 mt-2"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                                <div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="h-2 bg-white/10 rounded w-2/3"></div>
+                                    <div class="h-2 bg-white/5 rounded w-1/3 mt-2"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                                <div class="w-8 h-8 rounded bg-accent-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="h-2 bg-white/10 rounded w-4/5"></div>
+                                    <div class="h-2 bg-white/5 rounded w-2/5 mt-2"></div>
+                                </div>
+                            </div>
+                            <div class="mt-6 p-4 rounded-lg bg-gradient-to-r from-accent-500/10 to-violet-500/10 border border-accent-500/20">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span class="text-sm font-medium text-accent-400">Diagnóstico completado</span>
+                                </div>
+                                <div class="h-2 bg-white/10 rounded w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2: Implementación -->
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12">
+                <div class="fade-left order-2 lg:order-1 flex items-center">
+                    <div class="w-full bg-deep-700/50 rounded-2xl border border-white/5 p-8 card-glow transition-all duration-500">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="p-4 rounded-lg bg-accent-500/10 border border-accent-500/20 text-center">
+                                    <div class="text-2xl font-bold text-accent-400">-60%</div>
+                                    <div class="text-xs text-gray-400 mt-1">Tiempo en tareas</div>
+                                </div>
+                                <div class="p-4 rounded-lg bg-violet-500/10 border border-violet-500/20 text-center">
+                                    <div class="text-2xl font-bold text-violet-400">3x</div>
+                                    <div class="text-xs text-gray-400 mt-1">Productividad</div>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-lg bg-white/5">
+                                <div class="flex items-center justify-between mb-3">
+                                    <span class="text-sm text-gray-400">Automatización activa</span>
+                                    <span class="text-sm text-accent-400 font-medium">98.7%</span>
+                                </div>
+                                <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-accent-500 to-violet-500 rounded-full" style="width: 98.7%"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                                <div class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Sistemas integrados correctamente</span>
+                            </div>
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-white/5">
+                                <div class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center">
+                                    <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Solución lista para producción</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-right order-1 lg:order-2">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <span class="text-sm text-violet-400 font-medium">Fase 2</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Implementación y Despliegue</h3>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Hacemos que la tecnología trabaje para usted. Configuramos, integramos y desplegamos soluciones inteligentes listas para usar.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-white font-medium">Configuración a medida</span>
+                                <p class="text-gray-500 text-sm mt-1">Cada solución se adapta a sus procesos, no al revés.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-white font-medium">Integración de sistemas existentes</span>
+                                <p class="text-gray-500 text-sm mt-1">Conectamos sus herramientas actuales para que funcionen como un ecosistema unificado.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg class="w-3.5 h-3.5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-white font-medium">Soluciones inteligentes listas para usar</span>
+                                <p class="text-gray-500 text-sm mt-1">Despliegue completo con capacitación y acompañamiento para su equipo.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ME SECTION ========== -->
+    <section id="sobre-mi" class="py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-deep-900 to-deep-800"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+                <!-- Photo -->
+                <div class="lg:col-span-2 flex justify-center fade-left">
+                    <div class="relative">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-br from-accent-500/30 to-violet-500/30 blur-2xl scale-110"></div>
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full bg-deep-700 border-2 border-white/10 overflow-hidden flex items-center justify-center">
+                            <!-- Placeholder: Reemplazar con foto real -->
+                            <img src="images/photo_2025-12-07_18-15-00.jpg" alt="Daniel Medina - Consultor en Automatización" class="w-full h-full object-cover">
+                            <!-- Cuando tengas otra foto, reemplaza el src -->
+                        </div>
+                        <div class="absolute -bottom-2 -right-2 bg-gradient-to-r from-accent-500 to-violet-500 rounded-full px-4 py-2">
+                            <span class="text-sm font-semibold text-white">+10 años</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="lg:col-span-3 fade-right">
+                    <span class="inline-block text-sm text-accent-400 font-medium tracking-wide uppercase mb-4">Sobre Mí</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Su socio tecnológico de <span class="gradient-text">confianza</span>
+                    </h2>
+                    <div class="space-y-4 text-gray-400 text-lg leading-relaxed">
+                        <p>
+                            Soy <strong class="text-white">Daniel Medina</strong>, Ingeniero en Telecomunicaciones y Especialista en Soporte con más de una década de experiencia en el sector de tecnología e informática. He aprendido que la tecnología por sí sola no genera resultados. Lo que realmente marca la diferencia es <strong class="text-white">cómo se aplica</strong>. Por eso, mi enfoque es entender su negocio, identificar oportunidades y diseñar soluciones que generen un retorno tangible.
+                        </p>
+                        <p>
+                            Mi misión es simple: <strong class="text-white">que la tecnología trabaje para usted, y no al revés.</strong>
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <div class="text-accent-400 font-bold text-2xl mb-1">+10</div>
+                            <div class="text-gray-500 text-sm">Años en el sector tecnológico</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <div class="text-violet-400 font-bold text-2xl mb-1">100%</div>
+                            <div class="text-gray-500 text-sm">Compromiso con resultados medibles</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY PARTNER SECTION ========== -->
+    <section id="beneficios" class="py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-deep-800 to-deep-900"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-violet-500/5 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 md:mb-20">
+                <span class="fade-up inline-block text-sm text-accent-400 font-medium tracking-wide uppercase mb-4">¿Por qué elegirme?</span>
+                <h2 class="fade-up delay-100 text-3xl md:text-5xl font-bold mb-6">
+                    Por qué trabajar con un <span class="gradient-text">Partner Tecnológico</span>
+                </h2>
+                <p class="fade-up delay-200 text-gray-400 max-w-2xl mx-auto text-lg">
+                    No soy un proveedor más. Soy su aliado estratégico para que cada inversión tecnológica se traduzca en crecimiento real.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Benefit 1 -->
+                <div class="fade-up delay-100 group p-8 rounded-2xl bg-deep-700/30 border border-white/5 hover:border-accent-500/20 transition-all duration-500 card-glow">
+                    <div class="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors">
+                        <svg class="w-7 h-7 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 00-3-3M6 3a3 3 0 00-3 3v2a3 3 0 003 3h.09M6 3h6M6 3v6m6-6v6m0 0h6m-6 0H6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Acompañamiento Constante</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        No desaparecemos después del despliegue. Le acompaño en cada etapa, asegurándome de que su equipo se sienta seguro y de que las soluciones evolucionen con su negocio.
+                    </p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="fade-up delay-200 group p-8 rounded-2xl bg-deep-700/30 border border-white/5 hover:border-violet-500/20 transition-all duration-500 card-glow">
+                    <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition-colors">
+                        <svg class="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Soluciones que no Caducan</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Diseño sistemas escalables y adaptables. Su inversión no se queda obsoleta; crece y se ajusta conforme su empresa enfrenta nuevos retos y oportunidades.
+                    </p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="fade-up delay-300 group p-8 rounded-2xl bg-deep-700/30 border border-white/5 hover:border-accent-500/20 transition-all duration-500 card-glow">
+                    <div class="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors">
+                        <svg class="w-7 h-7 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tecnología con Retorno (ROI)</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Cada decisión tecnológica está respaldada por métricas claras. No implemento por implementar; cada solución tiene un objetivo de negocio medible y un retorno esperado.
+                    </p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="fade-up delay-100 group p-8 rounded-2xl bg-deep-700/30 border border-white/5 hover:border-violet-500/20 transition-all duration-500 card-glow">
+                    <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition-colors">
+                        <svg class="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Resultados Rápidos</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Metodología ágil que prioriza las victorias rápidas. Verá mejoras concretas desde las primeras semanas, no en meses de desarrollo sin fin.
+                    </p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="fade-up delay-200 group p-8 rounded-2xl bg-deep-700/30 border border-white/5 hover:border-accent-500/20 transition-all duration-500 card-glow">
+                    <div class="w-14 h-14 rounded-xl bg-accent-500/10 flex items-center justify-center mb-6 group-hover:bg-accent-500/20 transition-colors">
+                        <svg class="w-7 h-7 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sin Jerga Técnica</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Le hablo en el idioma de su negocio, no en código. Transparencia total en cada paso, para que siempre sepa qué se hace, por qué y qué beneficio genera.
+                    </p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="fade-up delay-300 group p-8 rounded-2xl bg-deep-700/30 border border-white/5 hover:border-violet-500/20 transition-all duration-500 card-glow">
+                    <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center mb-6 group-hover:bg-violet-500/20 transition-colors">
+                        <svg class="w-7 h-7 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Visión Global del Negocio</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Entiendo que la tecnología es un medio, no un fin. Cada solución se diseña pensando en el impacto real en sus operaciones, su equipo y sus clientes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contacto" class="py-20 md:py-32 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-deep-900 via-deep-800 to-deep-900"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+                <!-- Left: Info -->
+                <div class="fade-left">
+                    <span class="inline-block text-sm text-accent-400 font-medium tracking-wide uppercase mb-4">Contacto</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                        Hablemos sobre el <span class="gradient-text">futuro de su empresa</span>
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        El primer paso es una conversación. Cuéntenos su mayor reto actual y descubramos juntos cómo la tecnología puede ayudarle a superarlo.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500">Email</span>
+                                <p class="text-white font-medium">tu@email.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500">Ubicación</span>
+                                <p class="text-white font-medium">Disponible de forma remota</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-accent-500/10 border border-accent-500/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500">Respuesta en</span>
+                                <p class="text-white font-medium">Menos de 24 horas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="fade-right">
+                    <form id="contact-form" class="p-8 md:p-10 rounded-2xl bg-deep-700/30 border border-white/5 space-y-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-300 mb-2">Nombre completo</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez"
+                                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="empresa" class="block text-sm font-medium text-gray-300 mb-2">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" required placeholder="Ej: Mi Empresa S.A."
+                                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="juan@miempresa.com"
+                                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="reto" class="block text-sm font-medium text-gray-300 mb-2">Cuéntenos su mayor reto actual</label>
+                            <textarea id="reto" name="reto" rows="4" required placeholder="¿Qué proceso le gustaría optimizar? ¿Qué desafío enfrenta su equipo día a día?"
+                                class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full btn-primary px-8 py-4 rounded-xl text-white font-semibold text-base flex items-center justify-center gap-2">
+                            Enviar Consulta
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
+                        <p class="text-xs text-gray-500 text-center">
+                            Respondo personalmente cada consulta. Sin compromisos, sin spam.
+                        </p>
+                    </form>
+                    <!-- Success message (hidden by default) -->
+                    <div id="form-success" class="hidden p-8 md:p-10 rounded-2xl bg-deep-700/30 border border-accent-500/20 text-center">
+                        <div class="w-16 h-16 rounded-full bg-accent-500/20 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">¡Mensaje enviado!</h3>
+                        <p class="text-gray-400">Gracias por contactarme. Le responderé en menos de 24 horas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-500 to-violet-500 flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">DM</span>
+                    </div>
+                    <span class="font-semibold">Automatizaciones</span>
+                </div>
+                <p class="text-sm text-gray-500 text-center">
+                    &copy; <span id="year"></span> Daniel Medina. Todos los derechos reservados.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-gray-500 hover:text-accent-400 transition-colors" aria-label="LinkedIn">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:tu@email.com" class="text-gray-500 hover:text-accent-400 transition-colors" aria-label="Email">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-deep-900/80', 'nav-blur', 'border-b', 'border-white/5');
+            } else {
+                navbar.classList.remove('bg-deep-900/80', 'nav-blur', 'border-b', 'border-white/5');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Scroll animations (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form handling
+        const form = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aquí puedes integrar con tu servicio de email (Formspree, EmailJS, etc.)
+            form.classList.add('hidden');
+            formSuccess.classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
