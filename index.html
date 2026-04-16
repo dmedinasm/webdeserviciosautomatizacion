@@ -45,6 +45,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
         * { font-family: 'Inter', system-ui, sans-serif; }
         .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
@@ -730,14 +731,24 @@
             observer.observe(el);
         });
 
-        // Form handling
+        // EmailJS initialization
+        (function(){
+            emailjs.init("-4_1XVLTXkBSvoCAq");
+        })();
+
+        // Form handling with EmailJS
         const form = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', function (e) {
             e.preventDefault();
-            // Aquí puedes integrar con tu servicio de email (Formspree, EmailJS, etc.)
-            form.classList.add('hidden');
-            formSuccess.classList.remove('hidden');
+
+            emailjs.sendForm('service_ta4i9pl', 'template_l3humk9', this)
+                .then(() => {
+                    form.classList.add('hidden');
+                    formSuccess.classList.remove('hidden');
+                }, (err) => {
+                    alert('Error al enviar el mensaje: ' + JSON.stringify(err));
+                });
         });
     </script>
 </body>
